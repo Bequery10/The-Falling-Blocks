@@ -1,4 +1,5 @@
-package tetris;
+
+
 
 import java.awt.Color;
 import java.awt.Font;
@@ -39,14 +40,14 @@ import javax.swing.SwingUtilities;
 public class FirstScreen implements MouseListener,KeyListener {
 	boolean endgamePass=false;
 	//ImageIcon narutoGif=new ImageIcon("spaceBackground.png");
-	ImageIcon narutoGifImage=new ImageIcon("tetrisSpace.png");
+	ImageIcon narutoGifImage=new ImageIcon("TSpace.png");
 	
 	JLabel narutoLabel=new JLabel();
 	
-	ImageIcon tetrisTextImage=new ImageIcon("tetris.png");
-	JLabel tetrisTextLabel=new JLabel();
+	ImageIcon TTextImage=new ImageIcon("T.png");
+	JLabel TTextLabel=new JLabel();
 	
-	ImageIcon playButtonImage=new ImageIcon("tetrisPlay.png");
+	ImageIcon playButtonImage=new ImageIcon("TPlay.png");
 	JLabel playButtonLabel=new JLabel();
 	
 	ImageIcon frameImage=new ImageIcon("frame.png");
@@ -101,7 +102,7 @@ public class FirstScreen implements MouseListener,KeyListener {
 	JLabel blockLabel3=new JLabel();
 	JLabel blockLabel4=new JLabel();
 	
-	JFrame frame=new JFrame("Tetris");
+	JFrame frame=new JFrame("T");
 	Random random=new Random();
 	
 	boolean pass=true;
@@ -246,8 +247,8 @@ private void soundEffects() throws UnsupportedAudioFileException, IOException, L
 		narutoLabel.setBounds(0, 0, 1440, 1000);
 		
 		
-		tetrisTextLabel.setIcon(tetrisTextImage);
-		tetrisTextLabel.setBounds((1440-500)/2-200, 100, 900 , 300);
+		TTextLabel.setIcon(TTextImage);
+		TTextLabel.setBounds((1440-500)/2-200, 100, 900 , 300);
 		
 		playButtonLabel.setIcon(playButtonImage);
 		playButtonLabel.setBounds(590, 450, 230, 67);
@@ -259,7 +260,7 @@ private void soundEffects() throws UnsupportedAudioFileException, IOException, L
 		frame.setSize(1440,1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.add(tetrisTextLabel);
+		frame.add(TTextLabel);
 		frame.add(playButtonLabel);
 		frame.add(narutoLabel);
 		frame.setLayout(null);
@@ -784,7 +785,7 @@ int count=0;
 		if(e.getSource()==playButtonLabel) {
 			
 			playSoundClip.start();
-		ImageIcon image=new ImageIcon("tetrisPlayPressed.png");
+		ImageIcon image=new ImageIcon("TPlayPressed.png");
 		playButtonLabel.setIcon(image);
 		playButtonLabel.setBounds(playButtonLabel.getX()+10, playButtonLabel.getY()+3, 210, 61);
 		
@@ -807,9 +808,9 @@ int count=0;
 				public void run() {
 					// TODO Auto-generated method stub
 					playButtonLabel.setBounds(0,0,-1000, 1000);
-					tetrisTextLabel.setBounds(0,0,-1000, 1000);
+					TTextLabel.setBounds(0,0,-1000, 1000);
 					frame.remove(playButtonLabel);
-					frame.remove(tetrisTextLabel);
+					frame.remove(TTextLabel);
 					frame.remove(narutoLabel);
 //					frame.setVisible(false);
 //					frame.setVisible(true);
@@ -1256,7 +1257,6 @@ rotatingObjectColliderFixer(e,keyCode);
     				
     			
     			if(space[row][column]==true) {
-    				System.out.println("false is returned");
     				
     				for(int j=0;j<4;j++) {
     					
@@ -1369,7 +1369,7 @@ endGameMusicClip.start();
 
 	
 		
-	JFrame frame=new JFrame("Tetris");
+	JFrame frame=new JFrame("TheFallingBlocks");
 	
 	frame.setVisible(true);
 	frame.setSize(1440,1000);
@@ -1388,7 +1388,7 @@ endGameMusicClip.start();
 	nameLabel.setBounds((highestScoreLabel.getX()-15), highestScoreLabel.getY()+80, 800, 800);
 	
 	
-		narutoLabel.setIcon(new ImageIcon("tetrisSpace.png"));
+		narutoLabel.setIcon(new ImageIcon("TSpace.png"));
 		scoreLabel.setBounds(scoreLabel.getX()-210, scoreLabel.getY()-150, 800, 800);
 		scoreLabel1.setBounds(scoreLabel1.getX()-310, scoreLabel1.getY()-150, 800, 800);
 		scoreLabel1.setText(" YOUR SCORE ");

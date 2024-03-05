@@ -1,4 +1,5 @@
-package tetris;
+
+
 
 public class BlueBlock extends Block {
 

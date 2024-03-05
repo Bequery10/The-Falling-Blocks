@@ -1,4 +1,4 @@
-package tetris;
+
 
 abstract class Block {
 	private int baseX=0;
